@@ -2,30 +2,57 @@ Starcounter Async Extensions
 ---
 
 h2. AsyncInputHandlers
-Ordinarily Starcounter input handlers do not mix well with `await`:
-
+To introduce asynchronicity in Starcounter TypedJSON view-model, you have to use callbacks and handle errors carefully:
 ```cs
 public void Handle(Input.StartWorkTrigger input)
 {
-  this.IsBusy = true;
-  await DoWorkAsync();
-  // after "await" invocation we no longer have valid scheduler nor session.
-  // That means we can't use DB nor update the json properties
-  this.IsBusy = false; // this will not be visible to client
+	this.IsBusy = true;
+    Task.Run(LengthyJob)
+        .ContinueWith(task => Session.ScheduleTask(Session.Current.SessionId,
+        (Session session, string sessionId) => {
+            // might happen if this code is executed after the session has been destroyed
+            if (session == null)
+            {
+                return;
+            }
+            try
+            {
+				// if LengthyJob resulted in exception, it will be unwrapped here
+                this.Result = task.Result;
+            }
+            catch (Exception e)
+            {
+                this.Result = "Error";
+            }
+            finally
+            {
+                this.IsBusy = false;
+				// otherwise the changes won't be immediately visible to the client
+				session.CalculatePatchAndPushOnWebSocket();
+            }
+        }));
 }
-```
 
-However, we can overcome this with the use of `AsyncInputHandlers`:
+This library allows you to simplify this code by using async-await
 
 ```cs
 public void Handle(Input.StartWorkTrigger input)
 {
-  using (AsyncInputHandlers.Enable())
-  {
-    this.IsBusy = true;
-    await DoWorkAsync(); // session is yielded, patch is calculated and sent to client
-    // StarcounterSynchronizationContext restores scheduler and session after awaiting
-    this.IsBusy = false; // this is executed with correct session, and results in another patch sent to client
-  }
+	AsyncInputHandlers.Run(async () =>
+	{
+		this.IsBusy = true;
+		try
+		{
+			this.Result = await LengthyJob();
+		}
+		catch(Exception e)
+		{
+			this.Result = "Error";
+		}
+		finally
+		{
+			this.IsBusy = false;
+		}
+	});
 }
 ```
