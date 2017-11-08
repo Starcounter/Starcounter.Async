@@ -1,0 +1,14 @@
+{
+  "Html": "/StarcounterApplication4/Modal.html",
+  "ChangeFirstNameTrigger$": 0,
+  "ChangeLastNameTrigger$": 0,
+  "ResetNameTrigger$": 0,
+  "ConfirmTrigger$": 0,
+  "CancelTrigger$": 0,
+  "ShowNameDialog": false,
+  "ShowConfirmationDialog": false,
+  "ShowMain": false,
+  "DialogName$": "",
+  "FirstName": "",
+  "LastName": ""
+}
