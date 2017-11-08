@@ -1,19 +1,23 @@
 using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Threading;
 using Starcounter;
 using Starcounter.Logging;
 
 namespace Joozek78.Star.AsyncHandlers.Internal
 {
-    public class StarcounterSynchronizationContext : SynchronizationContext
+    /// <summary>
+    /// This synchronization context preserves information about current Starcounter session
+    /// </summary>
+    public class StarcounterSessionSynchronizationContext : SynchronizationContext
     {
         private readonly string SessionId;
 
         private readonly ConcurrentQueue<Job> Jobs = new ConcurrentQueue<Job>();
-        private static readonly LogSource LogSource = new LogSource(typeof(StarcounterSynchronizationContext).FullName);
+        private static readonly LogSource LogSource = new LogSource(typeof(StarcounterSessionSynchronizationContext).FullName);
 
-        public StarcounterSynchronizationContext()
+        public StarcounterSessionSynchronizationContext()
         {
             SessionId = Session.Current.SessionId;
         }
@@ -54,13 +58,8 @@ namespace Joozek78.Star.AsyncHandlers.Internal
         /// Execute any outstanding jobs scheduled on this context. Call it to prevent more session.CalculatePatchAndPushOnWebSocket() than it is required.
         /// You can safely call it in 
         /// </summary>
-        /// <returns>true if any jobs were executed, false if none were scheduled</returns>
         public bool FlushJobs()
         {
-            if (Current != this)
-            {
-                throw new InvalidOperationException($"This method can be called only on current SynchronizationContext");
-            }
             bool flushed = false;
             while (Jobs.TryDequeue(out var jobToRun))
             {
@@ -70,12 +69,14 @@ namespace Joozek78.Star.AsyncHandlers.Internal
                 }
                 catch (Exception e)
                 {
-                    LogSource.LogException(e, "Unhandled exception in async handler");
+                    HandleException(e);
                 }
                 flushed = true;
             }
             return flushed;
         }
+
+        private static void HandleException(Exception e) => LogSource.LogException(e, "Unhandled exception in async handler");
 
         public override SynchronizationContext CreateCopy()
         {
