@@ -2,11 +2,11 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Joozek78.Star.AsyncHandlers;
+using Joozek78.Star.Async;
 using Starcounter;
 using Starcounter.Authorization.Routing;
 
-namespace Joozek78.Star.AsyncHandlers.Examples
+namespace Joozek78.Star.Async.Examples
 {
     [Url("/AsyncHandlers/Background")]
     partial class BackgroundWorkPage : Json
@@ -14,9 +14,6 @@ namespace Joozek78.Star.AsyncHandlers.Examples
         private CancellationTokenSource WorkCancellationTokenSource;
         public void Handle(Input.StartSimpleWorkTrigger input)
         {
-            Scheduling.ScheduleTask(() => {
-                throw new Exception("trololoo");
-            });
             AsyncInputHandlers.Run(async () => {
                 WorkProgress = "Started";
                 await Task.Delay(TimeSpan.FromSeconds(1));

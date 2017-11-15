@@ -5,7 +5,7 @@ using System.Threading;
 using Starcounter;
 using Starcounter.Logging;
 
-namespace Joozek78.Star.AsyncHandlers.Internal
+namespace Joozek78.Star.Async.Internal
 {
     /// <summary>
     /// This synchronization context preserves information about current Starcounter session

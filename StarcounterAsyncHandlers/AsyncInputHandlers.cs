@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
-using System.Threading.Tasks;
-using Joozek78.Star.AsyncHandlers.Internal;
+using Joozek78.Star.Async.Internal;
 using Nito.AsyncEx;
-using Starcounter;
-using Starcounter.Templates;
 
-namespace Joozek78.Star.AsyncHandlers
+namespace Joozek78.Star.Async
 {
     public class AsyncInputHandlers
     {

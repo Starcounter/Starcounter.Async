@@ -88,10 +88,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="wwwroot\StarcounterApplication4\Background.html" />
+    <EmbeddedResource Include="wwwroot\AsyncHandlers\Background.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StarcounterAsyncHandlers\StarcounterAsyncHandlers\StarcounterAsyncHandlers.csproj">
+    <ProjectReference Include="..\StarcounterAsyncHandlers\StarcounterAsyncHandlers.csproj">
       <Project>{ff5a3f5e-80fb-46f9-846c-4fd29dc86a45}</Project>
       <Name>StarcounterAsyncHandlers</Name>
     </ProjectReference>

@@ -2,7 +2,7 @@
 using Starcounter;
 using Starcounter.Authorization.Routing;
 
-namespace Joozek78.Star.AsyncHandlers.Examples
+namespace Joozek78.Star.Async.Examples
 {
     public class Program
     {
