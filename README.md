@@ -1,5 +1,6 @@
 Starcounter Async Extensions
 ---
+Available on nuget: `Install-Package Joozek78.Starcounter.Async -Version 1.0.0`
 
 To introduce asynchronicity in Starcounter TypedJSON view-model, you have to use callbacks and handle errors carefully:
 
