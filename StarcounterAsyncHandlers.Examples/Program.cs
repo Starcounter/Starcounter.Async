@@ -1,8 +1,8 @@
-﻿using System;
+﻿using System.Threading;
 using Starcounter;
 using Starcounter.Authorization.Routing;
 
-namespace StarcounterApplication4
+namespace Joozek78.Star.AsyncHandlers.Examples
 {
     public class Program
     {
