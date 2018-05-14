@@ -22,6 +22,7 @@ namespace Joozek78.Star.Async.Internal
             SessionId = Session.Current.SessionId;
         }
 
+#pragma warning disable CS0618 // Type or member is obsolete - Session.ScheduleTask
         public override void Send(SendOrPostCallback d, object state)
         {
             Session.ScheduleTask(SessionId,
@@ -57,10 +58,11 @@ namespace Joozek78.Star.Async.Internal
                 {
                     LogSource.LogException(e, "Unhandled exception in async handler");
                     // behavior copied from Starcounter
-                    session.ActiveWebSocket.Disconnect(e.ToString().Substring(0, 120), WebSocket.WebSocketCloseCodes.WS_CLOSE_UNEXPECTED_CONDITION);
+                    ((WebSocket)session.ActiveWebSocket).Disconnect(e.ToString().Substring(0, 120), WebSocket.WebSocketCloseCodes.WS_CLOSE_UNEXPECTED_CONDITION);
                 }
             });
         }
+#pragma warning restore CS0618 // Type or member is obsolete
 
         /// <summary>
         /// Execute any outstanding jobs scheduled on this context. Call it to prevent more session.CalculatePatchAndPushOnWebSocket() than it is required.

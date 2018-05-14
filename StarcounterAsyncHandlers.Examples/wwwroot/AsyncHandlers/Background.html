@@ -1,14 +1,16 @@
 ﻿<link rel="import" href="/sys/polymer/polymer.html">
 
 <template>
-    <template is="dom-bind">
-        <div>
-            <button value="{{model.StartSimpleWorkTrigger$::click}}" onclick="++this.value">Start background work</button>
-            <button value="{{model.StartFaultyWorkTrigger$::click}}" onclick="++this.value">Start background work with error</button>
-            <button value="{{model.StartProgressWorkTrigger$::click}}" onclick="++this.value">Start background work with progress</button>
-            <button value="{{model.StartCancellableWorkTrigger$::click}}" onclick="++this.value">Start cancellable background work</button>
-            <button value="{{model.CancelWorkTrigger$::click}}" onclick="++this.value">Cancel current job</button>
-            <p>{{model.WorkProgress}}</p>
-        </div>
-    </template>
+    <dom-bind>
+        <template is="dom-bind">
+            <div>
+                <button value="{{model.StartSimpleWorkTrigger$::click}}" onclick="++this.value">Start background work</button>
+                <button value="{{model.StartFaultyWorkTrigger$::click}}" onclick="++this.value">Start background work with error</button>
+                <button value="{{model.StartProgressWorkTrigger$::click}}" onclick="++this.value">Start background work with progress</button>
+                <button value="{{model.StartCancellableWorkTrigger$::click}}" onclick="++this.value">Start cancellable background work</button>
+                <button value="{{model.CancelWorkTrigger$::click}}" onclick="++this.value">Cancel current job</button>
+                <p>{{model.WorkProgress}}</p>
+            </div>
+        </template>
+    </dom-bind>
 </template>

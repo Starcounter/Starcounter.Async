@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using Starcounter;
-using Starcounter.Authorization.Routing;
+﻿using Starcounter.Startup;
 
 namespace Joozek78.Star.Async.Examples
 {
@@ -8,10 +6,7 @@ namespace Joozek78.Star.Async.Examples
     {
         static void Main()
         {
-            Application.Current.Use(new HtmlFromJsonProvider());
-            Application.Current.Use(new PartialToStandaloneHtmlProvider());
-
-            Router.CreateDefault().RegisterAllFromCurrentAssembly();
+            DefaultStarcounterBootstrapper.Start(new Startup());
         }
     }
 }

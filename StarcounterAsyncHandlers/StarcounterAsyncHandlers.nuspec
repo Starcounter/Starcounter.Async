@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/joozek78/starcounter-async/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unofficial extensions for Starcounter aiding async programming</description>
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>Compatibility with 2.4, for 2.3-compatible version please use 1.0.0 of this package</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Starcounter Async</tags>
   </metadata>

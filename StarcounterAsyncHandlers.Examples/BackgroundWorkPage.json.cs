@@ -1,10 +1,8 @@
 using System;
-using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Joozek78.Star.Async;
 using Starcounter;
-using Starcounter.Authorization.Routing;
+using Starcounter.Startup.Routing;
 
 namespace Joozek78.Star.Async.Examples
 {

@@ -9,6 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Joozek78.Star.Async</RootNamespace>
     <AssemblyName>Joozek78.Starcounter.Async</AssemblyName>
+    <StarcounterVersionCompatibility>2.4</StarcounterVersionCompatibility>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
