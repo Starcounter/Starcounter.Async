@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Concurrent;
-using System.Diagnostics;
 using System.Threading;
 using Starcounter;
 using Starcounter.Logging;
@@ -25,13 +24,14 @@ namespace Joozek78.Star.Async.Internal
 #pragma warning disable CS0618 // Type or member is obsolete - Session.ScheduleTask
         public override void Send(SendOrPostCallback d, object state)
         {
-            Session.ScheduleTask(SessionId,
-                (Session session, string sessionId) => {
+            Session.RunTask(SessionId,
+                (Session session, string sessionId) =>
+                {
                     if (session != null)
                     {
                         d(state);
                     }
-                }, waitForCompletion: true);
+                });
         }
 
         public override void Post(SendOrPostCallback d, object state)
@@ -42,7 +42,8 @@ namespace Joozek78.Star.Async.Internal
                 CallbackArg = state,
                 Completed = false
             });
-            Session.ScheduleTask(SessionId, (session, sessionId) => {
+            Session.RunTask(SessionId, (session, sessionId) =>
+            {
                 if (session == null)
                 {
                     return;
