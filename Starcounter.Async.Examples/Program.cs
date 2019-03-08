@@ -1,6 +1,6 @@
 ﻿using Starcounter.Startup;
 
-namespace Joozek78.Star.Async.Examples
+namespace Starcounter.Async.Examples
 {
     public class Program
     {

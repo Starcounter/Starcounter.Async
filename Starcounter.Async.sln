@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarcounterAsyncHandlers.Examples", "StarcounterAsyncHandlers.Examples\StarcounterAsyncHandlers.Examples.csproj", "{8555655C-77EE-4769-8DE2-B30818725E82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starcounter.Async.Examples", "Starcounter.Async.Examples\Starcounter.Async.Examples.csproj", "{8555655C-77EE-4769-8DE2-B30818725E82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5DB9036D-EDF3-4EE1-9EAD-DE2122913BC2}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarcounterAsyncHandlers", "StarcounterAsyncHandlers\StarcounterAsyncHandlers.csproj", "{FF5A3F5E-80FB-46F9-846C-4FD29DC86A45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starcounter.Async", "Starcounter.Async\Starcounter.Async.csproj", "{FF5A3F5E-80FB-46F9-846C-4FD29DC86A45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

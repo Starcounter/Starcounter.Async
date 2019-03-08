@@ -4,10 +4,10 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>joozek78</authors>
+    <authors>Starcounter, joozek78</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/joozek78/starcounter-async/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/joozek78/starcounter-async/</projectUrl>
+    <licenseUrl>https://github.com/Starcounter/starcounter-async/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Starcounter/starcounter-async/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unofficial extensions for Starcounter aiding async programming</description>
     <releaseNotes>Compatibility with 2.4, for 2.3-compatible version please use 1.0.0 of this package</releaseNotes>

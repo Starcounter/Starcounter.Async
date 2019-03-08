@@ -7,8 +7,8 @@
     <ProjectGuid>{FF5A3F5E-80FB-46F9-846C-4FD29DC86A45}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Joozek78.Star.Async</RootNamespace>
-    <AssemblyName>Joozek78.Starcounter.Async</AssemblyName>
+    <RootNamespace>Starcounter.Async</RootNamespace>
+    <AssemblyName>Starcounter.Async</AssemblyName>
     <StarcounterVersionCompatibility>2.4</StarcounterVersionCompatibility>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="StarcounterAsyncHandlers.nuspec" />
+    <None Include="Starcounter.Async.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
