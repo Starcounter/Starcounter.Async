@@ -6,8 +6,8 @@
     <title>$title$</title>
     <authors>Starcounter, joozek78</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/Starcounter/starcounter-async/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/Starcounter/starcounter-async/</projectUrl>
+    <licenseUrl>https://github.com/Starcounter/Starcounter.Async/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Starcounter/Starcounter.Async/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unofficial extensions for Starcounter aiding async programming</description>
     <releaseNotes>Compatibility with 2.4, for 2.3-compatible version please use 1.0.0 of this package</releaseNotes>
