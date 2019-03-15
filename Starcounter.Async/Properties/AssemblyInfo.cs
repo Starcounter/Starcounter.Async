@@ -1,17 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Starcounter.Internal;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("StarcounterApplication4")]
+[assembly: AssemblyTitle("Starcounter.Async")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("StarcounterApplication4")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyProduct("Starcounter.Async")]
+[assembly: AssemblyCopyright("Copyright © 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,7 +19,7 @@ using Starcounter.Internal;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("526edd06-b4f0-469f-a4d4-e95b3c94f5ac")]
+[assembly: Guid("ff5a3f5e-80fb-46f9-846c-4fd29dc86a45")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,10 +31,5 @@ using Starcounter.Internal;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
-
-// Assures the current assembly has a reference to the Starcounter
-// assembly. A reference to Starcounter is currently required for
-// Starcounter to detect that an assembly should be hosted.
-[assembly: StarcounterAssembly()]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]

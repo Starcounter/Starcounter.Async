@@ -2,7 +2,7 @@
 using Starcounter.Startup.Abstractions;
 using Starcounter.Startup.Routing;
 
-namespace Joozek78.Star.Async.Examples
+namespace Starcounter.Async.Examples
 {
     public class Startup : IStartup
     {

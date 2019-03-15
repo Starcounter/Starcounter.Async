@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Starcounter;
 using Starcounter.Startup.Routing;
 
-namespace Joozek78.Star.Async.Examples
+namespace Starcounter.Async.Examples
 {
     [Url("/AsyncHandlers/Background")]
     partial class BackgroundWorkPage : Json
